@@ -1,6 +1,9 @@
 // App.jsx
 import React, { useState } from 'react';
 import {FaRegEye ,FaRegEyeSlash} from "react-icons/fa6"
+import axiosInstance from "../Utils/axiosInstance";
+import Footer from '../Utils/Footer';
+import Header from '../Utils/Header';
 const Login = () => {
   const [email,setEmail] = useState("");
   const [password,setPassword]=useState("");
@@ -47,29 +50,13 @@ const Login = () => {
   }
   return (
     <div className="min-h-screen flex flex-col">
-      <nav className="bg-gray-900 text-white p-4">
-        <div className="container mx-auto flex justify-between items-center">
-          <div className="text-xl font-bold">Ecobazar</div>
-          <div className="flex space-x-4">
-            <a href="#" className="hover:text-gray-400">Home</a>
-            <a href="#" className="hover:text-gray-400">Shop</a>
-            <a href="#" className="hover:text-gray-400">Pages</a>
-            <a href="#" className="hover:text-gray-400">Blog</a>
-            <a href="#" className="hover:text-gray-400">About Us</a>
-            <a href="#" className="hover:text-gray-400">Contact Us</a>
-            <a href="#" className="hover:text-gray-400">Sign In / Sign Up</a>
-          </div>
-        </div>
-      </nav>
+      <Header />
 
       <div className="flex-grow flex justify-center items-center bg-gray-100 py-10">
-        <div className="w-full max-w-md bg-white shadow-md rounded-md p-8">
+        <div className="w-full max-w-md bg-white shadow-md rounded-2xl p-8">
           <h2 className="text-2xl font-bold text-center mb-6">Sign In</h2>
           <form onSubmit={handleLogin}>
             <div className="mb-4">
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-                Email
-              </label>
               <input
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="email"
@@ -80,9 +67,7 @@ const Login = () => {
               />
             </div>
             <div className="mb-6">
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
-                Password
-              </label>
+              
               <div className="flex items-center shadow border rounded px-3 focus:outline-none focus:shadow-outline">
                 <input
                   className="appearance-none w-full py-2 text-gray-700 bg-transparent leading-tight focus:outline-none focus:shadow-outline"
@@ -106,7 +91,7 @@ const Login = () => {
             <div className="mt-6">
               <button
                 type="submit"
-                className="bg-green-600 text-white font-bold py-2 px-4 rounded w-full hover:bg-green-700 focus:outline-none focus:shadow-outline"
+                className="bg-green-600 text-white text-md py-2 px-4 rounded-full w-full hover:bg-green-700 focus:outline-none focus:shadow-outline"
               >
                 Login
               </button>
@@ -119,48 +104,7 @@ const Login = () => {
         </div>
       </div>
 
-      <footer className="bg-gray-900 text-white py-10">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div>
-              <h4 className="text-lg font-semibold">My Account</h4>
-              <ul className="mt-4 space-y-2">
-                <li><a href="#" className="hover:text-gray-400">My Account</a></li>
-                <li><a href="#" className="hover:text-gray-400">Order History</a></li>
-                <li><a href="#" className="hover:text-gray-400">Shopping Cart</a></li>
-                <li><a href="#" className="hover:text-gray-400">Wishlist</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold">Helps</h4>
-              <ul className="mt-4 space-y-2">
-                <li><a href="#" className="hover:text-gray-400">Contact</a></li>
-                <li><a href="#" className="hover:text-gray-400">FAQs</a></li>
-                <li><a href="#" className="hover:text-gray-400">Terms & Conditions</a></li>
-                <li><a href="#" className="hover:text-gray-400">Privacy Policy</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold">Proxy</h4>
-              <ul className="mt-4 space-y-2">
-                <li><a href="#" className="hover:text-gray-400">About</a></li>
-                <li><a href="#" className="hover:text-gray-400">Shop</a></li>
-                <li><a href="#" className="hover:text-gray-400">Product</a></li>
-                <li><a href="#" className="hover:text-gray-400">Track Order</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold">Categories</h4>
-              <ul className="mt-4 space-y-2">
-                <li><a href="#" className="hover:text-gray-400">Fruit & Vegetables</a></li>
-                <li><a href="#" className="hover:text-gray-400">Meat & Fish</a></li>
-                <li><a href="#" className="hover:text-gray-400">Bread & Bakery</a></li>
-                <li><a href="#" className="hover:text-gray-400">Beauty & Health</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
