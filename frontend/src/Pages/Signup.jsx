@@ -69,11 +69,11 @@ const Signup = () => {
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod earum molestias laudantium quia perspiciatis est pariatur consectetur ab reprehenderit libero magnam a eaque quam aperiam voluptatem natus, sed consequatur debitis!
                 </p>
             </div>
-            <div className="flex justify-center w-1/2">
+            <div className="flex justify-center w-1/2 rounded-full border-[2.5px] bg-transparent">
                 <input
                 type="email"
                 placeholder="Your email address"
-                className="border h-10 py-2 px-4 w-full rounded-full"
+                className="h-10 py-2 px-4 w-full outline-none bg-transparent"
                 />
                 <button className="bg-green-600 text-white h-10 font-bold py-2 px-6 rounded-full hover:bg-green-700">
                 Subscribe

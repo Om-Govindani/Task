@@ -103,7 +103,26 @@ const Login = () => {
           </p>
         </div>
       </div>
-
+      <div className="h-[150px] py-5">
+        <div className="container mx-auto text-center flex flex-row items-center ">
+            <div className='w-1/2'>
+                <h3 className="text-xl font-bold mb-4">Subscribe to our Newsletter</h3>
+                <p className="text-gray-600 text-sm mb-6 justify-center items-center">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod earum molestias laudantium quia perspiciatis est pariatur consectetur ab reprehenderit libero magnam a eaque quam aperiam voluptatem natus, sed consequatur debitis!
+                </p>
+            </div>
+            <div className="flex justify-center w-1/2 rounded-full border-[2.5px] bg-transparent">
+                <input
+                type="email"
+                placeholder="Your email address"
+                className="h-10 py-2 px-4 w-full outline-none bg-transparent"
+                />
+                <button className="bg-green-600 text-white h-10 font-bold py-2 px-6 rounded-full hover:bg-green-700">
+                Subscribe
+                </button>
+            </div>
+        </div>
+      </div>
       <Footer />
     </div>
   );
