@@ -5,7 +5,7 @@ function App() {
   const routes = (
     <Router>
       <Routes>
-        <Route path="/signin" exact element={<Login />}/>
+        <Route path="/" exact element={<Login />}/>
         <Route path="/signup" exact element={<Signup />}/>
       </Routes>
     </Router>

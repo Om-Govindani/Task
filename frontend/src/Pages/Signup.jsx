@@ -14,12 +14,20 @@ const Signup = () => {
   const toggleShowPassword = ()=>{
       setIsShowPassword(!isShowPassword)
   }
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\@s]+$/;
+    return regex.test(email);
+  };
     const [error,setError] = useState(null)
     const handleSignup = async (e)=>{
         e.preventDefault();
         if(!name){
             setError("Please Enter you name");
             return;
+        }
+        if(!validateEmail(email)){
+            setError("Please Enter a Valid Email")
+            return
         }
         if(!password){
             setError("Please Enter Password")
@@ -44,7 +52,7 @@ const Signup = () => {
             if(response.data && response.data.accessToken)
             {
                 localStorage.setItem("token",response.data.accessToken)
-                navigate("/dashboard")
+                alert("User Registered Sucessfully")
             }
         }catch (error) {
             if (error.response && error.response.data && error.response.data.message) {
@@ -120,7 +128,7 @@ const Signup = () => {
           </form>
           <p className="text-center text-gray-600 mt-4">
             Already have an account?{' '}
-            <Link to="/Signin" className="text-green-600 hover:text-green-800">Login</Link>
+            <Link to="/" className="text-green-600 hover:text-green-800">Login</Link>
           </p>
         </div>
       </div>

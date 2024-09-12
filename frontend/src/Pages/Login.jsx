@@ -34,7 +34,7 @@ const Login = () => {
       console.log(email+' '+password);
       if (response.data && response.data.accessToken) {
           localStorage.setItem("token", response.data.accessToken);
-          alert("Cannot find the User");
+          alert("Login Successful");
       }
     }catch (error) {
       if (error.response && error.response.data && error.response.data.message) {
