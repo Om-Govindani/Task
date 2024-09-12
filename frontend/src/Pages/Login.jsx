@@ -4,6 +4,7 @@ import {FaRegEye ,FaRegEyeSlash} from "react-icons/fa6"
 import axiosInstance from "../Utils/axiosInstance";
 import Footer from '../Utils/Footer';
 import Header from '../Utils/Header';
+import { Link } from 'react-router-dom';
 const Login = () => {
   const [email,setEmail] = useState("");
   const [password,setPassword]=useState("");
@@ -18,10 +19,6 @@ const Login = () => {
   };
   const handleLogin = async (e)=>{
     e.preventDefault();
-    if(!validateEmail(email)){
-        setError("Please Enter a Valid Email")
-        return
-    }
     if(!password){
         setError("Please Enter Password")
         return
@@ -99,7 +96,7 @@ const Login = () => {
           </form>
           <p className="text-center text-gray-600 mt-4">
             Don't have an account?{' '}
-            <a href="#" className="text-green-600 hover:text-green-800">Register</a>
+            <Link to="/Signup" className="text-green-600 hover:text-green-800">Register</Link>
           </p>
         </div>
       </div>
