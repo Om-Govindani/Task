@@ -1,6 +1,8 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
-mongoose.connect(process.env.MONGODB_URL);
+mongoose.connect(
+  "mongodb+srv://omgovindani:2612@task.fpjvs.mongodb.net/?retryWrites=true&w=majority&appName=Task"
+);
 const express = require("express");
 const cors = require("cors");
 const app = express();
